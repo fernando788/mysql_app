@@ -4,13 +4,22 @@ import 'package:mysql_client/mysql_client.dart';
 
 Future main() async {
   final pool = MySQLConnectionPool(
-    host: '127.0.0.1',
-    port: 3306,
-    userName: 'root',
-    password: 'boca1978',
-    maxConnections: 10,
-    databaseName: 'db_test', // optional,
-  );
+      host: 'sql10.freesqldatabase.com',
+      port: 3306,
+      userName: 'sql10619276',
+      password: 'LMdXbQ2uXu1',
+      maxConnections: 10,
+      databaseName: 'sql10619276', // optional,
+      secure: false);
+
+  // final pool = MySQLConnectionPool(
+  //   host: '127.0.0.1',
+  //   port: 3306,
+  //   userName: 'root',
+  //   password: 'boca1978',
+  //   maxConnections: 10,
+  //   databaseName: 'db_test', // optional,
+  // );
 
   var stmt = await pool.prepare(
     "INSERT INTO users2 (id, name, email, age) VALUES (?, ?, ?, ?)",
